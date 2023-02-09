@@ -25,7 +25,7 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-@task(print_logs=True)
+@task(log_prints=True)
 def write_local(df: pd.DataFrame,
                 color: str,
                 dataset_file: str) -> Path:
