@@ -25,7 +25,7 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-@task()
+@task(print_logs=True)
 def write_local(df: pd.DataFrame,
                 color: str,
                 dataset_file: str) -> Path:
@@ -33,6 +33,8 @@ def write_local(df: pd.DataFrame,
     Path(f"data/{color}").mkdir(parents=True, exist_ok=True)
     path = Path(f"data/{color}/{dataset_file}.parquet")
     df.to_parquet(path, compression="gzip")
+    l = len(df)
+    print(f"Rows: {l}")
     return path
 
 
