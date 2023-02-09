@@ -4,6 +4,7 @@ from prefect import flow, task
 #from prefect_github import GitHubCredentials
 #from prefect_github.repository import query_repository
 from prefect_gcp.cloud_storage import GcsBucket
+from prefect_gcp import GcpCredentials
 
 
 @task(retries=3)
@@ -43,6 +44,7 @@ def write_gcs(path: Path) -> None:
             from_path=f"{path}",
             to_path=path
     )
+    return
 
 
 @flow()
