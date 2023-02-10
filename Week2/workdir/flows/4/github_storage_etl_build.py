@@ -1,7 +1,6 @@
 from prefect.deployments import Deployment
 from etl_web_to_gcs import etl_web_to_gcs
 from prefect.filesystems import GitHub 
-#name="github-deploy-block",
 
 storage = GitHub.load("ghs-webtogcs")
 

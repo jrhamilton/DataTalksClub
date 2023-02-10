@@ -1,15 +1,21 @@
 ###
 ### A complete description of a Prefect Deployment for flow 'etl-web-to-gcs'
 ###
-name: gh-web2gch-3
+name: gh-deploy-webtogcs
 description: The Main ETL function
 version: 8bf08dedf34b78f0210fcb0d2eaf8827
 # The work queue that will handle this deployment's runs
-work_queue_name: gh
+work_queue_name: default
 tags: []
-parameters: {}
+parameters: { "color" : "green", "year" : 2020, "month" : 11 }
 schedule: null
 infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-web-to-gcs
+manifest_path: null
 infrastructure:
   type: process
   env: {}
@@ -18,14 +24,11 @@ infrastructure:
   command: null
   stream_output: true
   working_dir: null
+  _block_document_id: 3a9f6258-d9a0-4b68-b197-0d3487a48c84
+  _block_document_name: anonymous-319010a0-769d-479e-b13d-f1a2b0b63ef3
+  _is_anonymous: true
   block_type_slug: process
   _block_type_slug: process
-
-###
-### DO NOT EDIT BELOW THIS LINE
-###
-flow_name: etl-web-to-gcs
-manifest_path: null
 storage:
   repository: https://github.com/jrhamilton/DataTalksClub
   reference: main
@@ -35,8 +38,8 @@ storage:
   _is_anonymous: false
   block_type_slug: github
   _block_type_slug: github
-path: ''
-entrypoint: etl_web_to_gcs.py:etl_web_to_gcs
+path: null
+entrypoint: Week2/workdir/flows/4/etl_web_to_gcs.py:etl_web_to_gcs
 parameter_openapi_schema:
   title: Parameters
   type: object
@@ -49,12 +52,12 @@ parameter_openapi_schema:
       title: year
       position: 1
       type: integer
-    month:
-      title: month
+    m:
+      title: m
       position: 2
       type: integer
   required:
   - color
   - year
-  - month
+  - m
   definitions: null
