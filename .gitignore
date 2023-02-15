@@ -5,3 +5,5 @@ ignores/
 **/__pycache__
 **/.prefectignore
 **/data/*
+**/*.csv.gz
+**/*.csv
