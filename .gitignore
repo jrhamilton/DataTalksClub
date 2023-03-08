@@ -6,3 +6,5 @@ ignores/
 **/.prefectignore
 **/data/*
 **/*.csv.gz
+**/*.parquet
+**/*.csv
